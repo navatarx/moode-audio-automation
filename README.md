@@ -61,10 +61,13 @@ Almost there! Deploy your node-red flows and make sure that node-red has autosta
 
 The only thing to do in order for node-red to be accessible from Alexa is to add the following iptable rule in order to redirect port 80 to port 8980 (in order to run node-red as a simple user, you have to use high port):
 ```
--A PREROUTING -s 10.0.0.0/24 -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8980
+sudo apt-get install iptables-persistent
+sudo iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
+sudo iptables -A PREROUTING -t nat -i wlan0 -p tcp --dport 80 -j REDIRECT --to-port 8980
+sudo netfilter-persistent save
+sudo netfilter-persistent reload
 ```
-(Remember to change 10.0.0.0/24 with your own network). Note that Alexa identifies those devices as philips royal hue hub.
 
-All set. Now you only have to discover devices from your Alexa and enjoy high quality audio automation :)
+All set. Now you only have to discover devices from your Alexa and enjoy high quality audio automation :). Note that Alexa identifies those devices as philips royal hue hub.
 
 Note: Integration with Volumio is quite similar. You only have to change tha functions URI accordingly (https://volumio.github.io/docs/API/REST_API.html)
