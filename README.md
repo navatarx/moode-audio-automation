@@ -17,7 +17,7 @@ Then you have to create the following flows:
 
 In order to create these flows you need the following in your node-red:
 
-- amazon-echo-hub, running on port 8980 (need to be added to your node-red):
+- amazon-echo-hub, running on port 8980 (need to installed to your node-red):
 - 3 amazon-echo-device (also need to installed to node-red). Only thing you have to be careful is the name (that's how you will call them from Alexa).
 - For each amazon-echo-device you need to add a function and a http request node-red modules
 
