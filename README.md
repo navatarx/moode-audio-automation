@@ -79,4 +79,4 @@ All set. Now you only have to discover devices from your Alexa and enjoy high qu
 
 or create a routine for "Alexa, next song" to "Turn on Pi Next Song"
 
-Note: Integration with Volumio is quite similar. You only have to change tha functions URI accordingly (https://volumio.github.io/docs/API/REST_API.html)
+Note: Integration with Volumio is quite similar. You only have to change the function URI accordingly (https://volumio.github.io/docs/API/REST_API.html)
