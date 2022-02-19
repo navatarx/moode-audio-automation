@@ -13,7 +13,9 @@ Assuming you already have moode audio (or Volumio) installed on a Pi with DAC an
 
 Note that node-red default installation is without password, so you have to create one. It's best practice to run node-red as a simple user, not root, preferably with no valid shell.
 
-Then you have to create the following flows:
+Now you can just upload the flows.json file to your node-red installation (you have to change some things first i.e. IP, name etc.) or follow the following guide:
+
+You have to create the following flows:
 
 ![flows](https://user-images.githubusercontent.com/100039669/154813898-5ebf3ce6-1137-4bbc-8c44-d57fa7b39e66.png)
 
