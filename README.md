@@ -72,6 +72,11 @@ sudo netfilter-persistent save
 sudo netfilter-persistent reload
 ```
 
-All set. Now you only have to discover devices from your Alexa and enjoy high quality audio automation :). Note that Alexa identifies those devices as philips royal hue hub.
+All set. Now you only have to discover devices from your Alexa and enjoy high quality audio automation :). Note that Alexa identifies those devices as philips royal hue hub. Just say:
+
+"Alexa, turn on Pi audio"
+"Alexa, turn on Pi Audio Volume"
+
+or create a routine for "Alexa, next song" to "Turn on Pi Next Song"
 
 Note: Integration with Volumio is quite similar. You only have to change tha functions URI accordingly (https://volumio.github.io/docs/API/REST_API.html)
