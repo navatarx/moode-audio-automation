@@ -3,6 +3,8 @@ Audio automation
 
 This how-to demonstrates a way to integrate Amazon Alexa with Moode Audio (https://moodeaudio.org/) (or Volumio) by using node-red as an integration platform.
 
+Moode audio is a fantastic project for all audiophiles out there - especially if you combine a Pi DAC Hat on top of you Pi and a quality Hi-Fi amplifier and speakers. But although it has a great web interface where you can manage it, there is no out of the box integration with Home automation platforms such as Amazon Alexa.
+
 There were some other options to such integration, for example create a port forward on your router and deploy an alexa skill to use remotely those API calls but this scenario has a security risk, leaving your moode audio exposed to internet.
 
 This is a more secure approach, not having to open any incoming ports from internet.
@@ -15,7 +17,7 @@ Then you have to create the following flows:
 
 ![flows](https://user-images.githubusercontent.com/100039669/154813898-5ebf3ce6-1137-4bbc-8c44-d57fa7b39e66.png)
 
-In order to create these flows you need the following in your node-red:
+In order to create these flows, you need the following in your node-red:
 
 - amazon-echo-hub, running on port 8980 (need to installed to your node-red):
 - 3 amazon-echo-device (also need to installed to node-red). Only thing you have to be careful is the name (that's how you will call them from Alexa).
