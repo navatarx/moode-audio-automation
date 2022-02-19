@@ -72,7 +72,7 @@ sudo netfilter-persistent save
 sudo netfilter-persistent reload
 ```
 
-All set. Now you only have to discover devices from your Alexa and enjoy high quality audio automation :). Note that Alexa identifies those devices as philips royal hue hub. Just say:
+All set. Now you only have to discover devices from your Alexa and enjoy high quality audio automation :-). Note that Alexa identifies those devices as philips royal hue hub. Just say:
 
 "Alexa, turn on Pi audio"
 "Alexa, turn on Pi Audio Volume"
