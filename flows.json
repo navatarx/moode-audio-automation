@@ -1,0 +1,182 @@
+[
+    {
+        "id": "cf398fad7586328c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bf1847b349281db4",
+        "type": "amazon-echo-hub",
+        "z": "cf398fad7586328c",
+        "port": "8980",
+        "processinput": 0,
+        "discovery": true,
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "ded11920c8a1b9a4",
+                "6dd24e25e4c50671",
+                "c1ef6e520434e34c"
+            ]
+        ]
+    },
+    {
+        "id": "ded11920c8a1b9a4",
+        "type": "amazon-echo-device",
+        "z": "cf398fad7586328c",
+        "name": "Pi Audio",
+        "topic": "",
+        "x": 440,
+        "y": 140,
+        "wires": [
+            [
+                "f0436d0cc5d70b84"
+            ]
+        ]
+    },
+    {
+        "id": "f0436d0cc5d70b84",
+        "type": "function",
+        "z": "cf398fad7586328c",
+        "name": "",
+        "func": "res={}\nif (msg.on) {\n  res.url=\"http://10.0.0.10/command/?cmd=play\"\n} else {\n  res.url=\"http://10.0.0.10/command/?cmd=stop\"\n}\nres.payload=\"\"\nreturn res;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 140,
+        "wires": [
+            [
+                "9544225177889603"
+            ]
+        ]
+    },
+    {
+        "id": "9544225177889603",
+        "type": "http request",
+        "z": "cf398fad7586328c",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 770,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e7bbd6356108e23",
+        "type": "function",
+        "z": "cf398fad7586328c",
+        "name": "",
+        "func": "res={}\nif (msg.on) {\n  res.url=\"http://10.0.0.10/command/?cmd=next\"\n} else {\n  res.url=\"http://10.0.0.10/command/?cmd=previous\"\n}\nres.payload=\"\"\nreturn res;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 240,
+        "wires": [
+            [
+                "794d823bf2b3be40"
+            ]
+        ]
+    },
+    {
+        "id": "6dd24e25e4c50671",
+        "type": "amazon-echo-device",
+        "z": "cf398fad7586328c",
+        "name": "Pi Next Song",
+        "topic": "",
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "7e7bbd6356108e23"
+            ]
+        ]
+    },
+    {
+        "id": "794d823bf2b3be40",
+        "type": "http request",
+        "z": "cf398fad7586328c",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "",
+        "persist": false,
+        "authType": "",
+        "senderr": false,
+        "x": 770,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c1ef6e520434e34c",
+        "type": "amazon-echo-device",
+        "z": "cf398fad7586328c",
+        "name": "Pi Audio Volume",
+        "topic": "",
+        "x": 420,
+        "y": 340,
+        "wires": [
+            [
+                "1afea08da7ab4305"
+            ]
+        ]
+    },
+    {
+        "id": "1afea08da7ab4305",
+        "type": "function",
+        "z": "cf398fad7586328c",
+        "name": "",
+        "func": "res={}\nif (msg.on) {\n  res.url=\"http://10.0.0.10/command/?cmd=vol.sh%20-up%2010\"\n} else {\n  res.url=\"http://10.0.0.10/command/?cmd=vol.sh%20-dn%2010\"\n}\nres.payload=\"\"\nreturn res;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 340,
+        "wires": [
+            [
+                "cb01eee888d82f93"
+            ]
+        ]
+    },
+    {
+        "id": "cb01eee888d82f93",
+        "type": "http request",
+        "z": "cf398fad7586328c",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "",
+        "persist": false,
+        "authType": "",
+        "senderr": false,
+        "x": 770,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    }
+]
